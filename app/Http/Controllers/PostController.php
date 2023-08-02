@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function index(): View
     {
-        $posts = Post::get();
+        $posts = Post::orderBy('id', 'DESC')->get();
         return view('post.index', [
             'posts' => $posts
         ]);
@@ -42,6 +42,8 @@ class PostController extends Controller
     public function store(StoreRequest $request)
     {
         $this->service->create(Post::class, $request->validated());
+
+        redirect()->route('posts.index');
     }
 
     /**

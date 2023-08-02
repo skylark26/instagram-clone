@@ -11,7 +11,7 @@ class PostService
 {
     public function uploadPhoto($model, UploadedFile $image): string
     {
-        return Storage::putFile('posts', $image);
+        return Storage::disk('public')->put('posts', $image);
     }
     public function create($model, array $attributes)
     {

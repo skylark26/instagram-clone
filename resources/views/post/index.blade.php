@@ -15,7 +15,7 @@
                         <div class="flex flex-1 items-center space-x-4">
                             <a href="#">
                                 <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
-                                    <img src="assets/images/avatars/avatar-2.jpg"
+                                    <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}"
                                          class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                 </div>
                             </a>
@@ -70,8 +70,8 @@
                     </div>
 
                     <div uk-lightbox>
-                        <a href="assets/images/post/img4.jpg">
-                            <img src="assets/images/post/img4.jpg" alt="">
+                        <a href="/storage/{{$post->image}}">
+                            <img src="/storage/{{$post->image}}" alt="">
                         </a>
                     </div>
 

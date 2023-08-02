@@ -18,13 +18,13 @@
 
     <!-- icons
         ================================================== -->
-    <link rel="stylesheet" href="assets/css/icons.css">
+    <link rel="stylesheet" href="{{asset('assets/css/icons.css')}}">
 
     <!-- CSS
         ================================================== -->
-    <link rel="stylesheet" href="assets/css/uikit.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/tailwind-dark.css">
+    <link rel="stylesheet" href="{{asset('assets/css/uikit.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/tailwind-dark.css')}}">
 
 </head>
 
@@ -35,9 +35,9 @@
 
         <div class="sidebar">
             <div class="sidebar_header border-b border-gray-200 from-gray-100 to-gray-50 bg-gradient-to-t  uk-visible@s">
-                <a href="#">
-                    <img src="assets/images/logo.png">
-                    <img src="assets/images/logo-light.png" class="logo_inverse">
+                <a href="{{route('home')}}">
+                    <img src="{{asset('assets/images/logo.png')}}">
+                    <img src="{{asset('assets/images/logo-light.png')}}" class="logo_inverse">
                 </a>
                 <!-- btn night mode -->
                 <a href="#" id="night-mode" class="btn-night-mode" data-tippy-placement="left" title="Switch to dark mode"></a>
@@ -50,7 +50,7 @@
                 <div class="flex flex-col items-center my-6 uk-visible@s">
                     <div
                         class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-1 rounded-full transition m-0.5 mr-2  w-24 h-24">
-                        <img src="assets/images/avatars/avatar-2.jpg"
+                        <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}"
                             class="bg-gray-200 border-4 border-white rounded-full w-full h-full">
                     </div>
                     <a href="profile.html" class="text-xl font-medium capitalize mt-4 uk-link-reset"> Stella Johnson
@@ -167,8 +167,8 @@
                         <!-- Logo -->
                         <div id="logo" class=" uk-hidden@s">
                             <a href="home.html">
-                                <img src="assets/images/logo-mobile.png" alt="">
-                                <img src="assets/images/logo-mobile-light.png" class="logo_inverse">
+                                <img src="{{asset('assets/images/logo-mobile.png')}}" alt="">
+                                <img src="{{asset('assets/images/logo-mobile-light.png')}}" class="logo_inverse">
                             </a>
                         </div>
 
@@ -190,7 +190,7 @@
                     </div>
                     <div class="right-side lg:pr-4">
                          <!-- upload -->
-                        <a href="#"
+                        <a href="{{route('posts.create')}}"
                             class="bg-pink-500 flex font-bold hidden hover:bg-pink-600 hover:text-white inline-block items-center lg:block max-h-10 mr-4 px-4 py-2 rounded shado text-white">
                             <ion-icon name="add-circle" class="-mb-1
                              mr-1 opacity-90 text-xl uilus-circle"></ion-icon> Upload
@@ -268,7 +268,7 @@
                             <ul class="dropdown_scrollbar" data-simplebar>
                                 <li>
                                     <a href="#">
-                                        <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
+                                        <div class="drop_avatar"> <img src="{{asset('assets/images/avatars/avatar-1.jpg')}}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <p> <strong>Adrian Mohani</strong>  Lorem ipsum dolor cursus
@@ -280,7 +280,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="drop_avatar"> <img src="assets/images/avatars/avatar-2.jpg" alt="">
+                                        <div class="drop_avatar"> <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <p>
@@ -293,7 +293,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="drop_avatar"> <img src="assets/images/avatars/avatar-3.jpg" alt="">
+                                        <div class="drop_avatar"> <img src="{{asset('assets/images/avatars/avatar-3.jpg')}}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <p>
@@ -306,7 +306,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
+                                        <div class="drop_avatar"> <img src="{{asset('assets/images/avatars/avatar-1.jpg')}}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <p>
@@ -319,7 +319,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="drop_avatar"> <img src="assets/images/avatars/avatar-3.jpg" alt="">
+                                        <div class="drop_avatar"> <img src="{{asset('assets/images/avatars/avatar-3.jpg')}}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <p>
@@ -350,7 +350,7 @@
                             <ul class="dropdown_scrollbar" data-simplebar>
                                 <li>
                                     <a href="#">
-                                        <div class="drop_avatar"> <img src="assets/images/avatars/avatar-1.jpg" alt="">
+                                        <div class="drop_avatar"> <img src="{{asset('assets/images/avatars/avatar-1.jpg')}}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <strong> John menathon </strong> <time> 6:43 PM</time>
@@ -360,7 +360,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="drop_avatar"> <img src="assets/images/avatars/avatar-2.jpg" alt="">
+                                        <div class="drop_avatar"> <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}" alt="">
                                         </div>
                                         <div class="drop_content">
                                             <strong> Zara Ali </strong> <time>12:43 PM</time>
@@ -415,7 +415,7 @@
                         <!-- profile -->
 
                         <a href="#">
-                            <img src="assets/images/avatars/avatar-2.jpg" class="header-avatar" alt="">
+                            <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}" class="header-avatar" alt="">
                         </a>
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                             <ul>
@@ -446,7 +446,7 @@
             <button class="uk-modal-close-default lg:-mt-9 lg:-mr-9 -mt-5 -mr-5 shadow-lg bg-white rounded-full p-4 transition dark:bg-gray-600 dark:text-white" type="button" uk-close></button>
 
                 <div class="story-modal-media">
-                    <img src="assets/images/post/img4.jpg" alt=""  class="inset-0 h-full w-full object-cover">
+                    <img src="{{asset('assets/images/post/img4.jpg')}}" alt=""  class="inset-0 h-full w-full object-cover">
                 </div>
                 <div class="flex-1 bg-white dark:bg-gray-900 dark:text-gray-100">
 
@@ -455,7 +455,7 @@
                         <div class="flex flex-1 items-center space-x-4">
                             <a href="#">
                                 <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">
-                                    <img src="assets/images/avatars/avatar-2.jpg"
+                                    <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}"
                                         class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                 </div>
                             </a>
@@ -484,9 +484,9 @@
                             <hr class="-mx-4 my-3">
                             <div class="flex items-center space-x-3">
                                 <div class="flex items-center">
-                                    <img src="assets/images/avatars/avatar-1.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white">
-                                    <img src="assets/images/avatars/avatar-4.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
-                                    <img src="assets/images/avatars/avatar-2.jpg" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                                    <img src="{{asset('assets/images/avatars/avatar-1.jpg')}}" alt="" class="w-6 h-6 rounded-full border-2 border-white">
+                                    <img src="{{asset('assets/images/avatars/avatar-4.jpg')}}" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
+                                    <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}" alt="" class="w-6 h-6 rounded-full border-2 border-white -ml-2">
                                 </div>
                                 <div>
                                     Liked <strong> Johnson</strong> and <strong> 209 Others </strong>
@@ -503,7 +503,7 @@
                         </div>
 
                         <div class="flex flex-1 items-center space-x-2">
-                            <img src="assets/images/avatars/avatar-4.jpg" class="rounded-full w-8 h-8">
+                            <img src="{{asset('assets/images/avatars/avatar-4.jpg')}}" class="rounded-full w-8 h-8">
                             <div class="flex-1 p-2">
                                 consectetuer adipiscing elit
                             </div>
@@ -569,11 +569,11 @@
 
  <!-- Scripts
     ================================================== -->
-    <script src="assets/js/tippy.all.min.js"></script>
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/uikit.js"></script>
-    <script src="assets/js/simplebar.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="{{asset('assets/js/tippy.all.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('assets/js/uikit.js')}}"></script>
+    <script src="{{asset('assets/js/simplebar.js')}}"></script>
+    <script src="{{asset('assets/js/custom.js')}}"></script>
 
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
