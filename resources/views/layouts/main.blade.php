@@ -147,7 +147,8 @@
                         <hr class="my-2">
                     </li>
                     <li>
-                        <a href="form-login.html">
+                        <form id="logout-form" action="{{ route('logout') }}"></form>
+                        <a href="#" onclick="logout();">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -422,7 +423,11 @@
                                 <li><a href="#"> Account setting </a> </li>
                                 <li><a href="#"> Payments </a> </li>
                                 <li><a href="#"> Help </a> </li>
-                                <li><a href="form-login.html"> Log Out</a></li>
+                                @guest()
+                                    <li><a href="{{route('login')}}"> Login</a></li>
+                                @else
+                                    <li><a href="#" onclick="logout();"> Log Out</a></li>
+                                @endguest
                             </ul>
                         </div>
 
@@ -577,6 +582,12 @@
 
 
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script>
+        function logout() {
+            let form = document.getElementById('logout-form');
+            form.submit();
+        }
+    </script>
 </body>
 
 </html>
