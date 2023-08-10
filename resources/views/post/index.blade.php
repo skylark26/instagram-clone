@@ -36,12 +36,14 @@
                                             <i class="uil-share-alt mr-1"></i> Share
                                         </a>
                                     </li>
+                                    @if ($post->isAuthor())
                                     <li>
                                         <a href="{{route('posts.edit', ['post' => $post->id])}}"
                                            class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                             <i class="uil-edit-alt mr-1"></i> Edit Post
                                         </a>
                                     </li>
+                                    @endif
                                     <li>
                                         <a href="#"
                                            class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">

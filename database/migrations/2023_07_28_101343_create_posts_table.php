@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('image');
             $table->text('caption')->nullable();
             $table->string('slug');
+            $table->integer('user_id');
+            $table->foreign('user_id')->on('users')->references('id')->cascadeOnDelete();
             $table->softDeletes();
         });
     }

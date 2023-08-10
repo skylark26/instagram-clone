@@ -43,7 +43,9 @@ class PostController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $this->service->create(Post::class, $request->validated());
+        $data = $request->validated();
+        $data['user_id'] = auth()->user()->id;
+        $this->service->create(Post::class, $data);
 
         return redirect()->route('posts.index');
     }
@@ -61,6 +63,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        //TODO: make a policy
         return view('post.edit', ['post' => $post]);
     }
 
