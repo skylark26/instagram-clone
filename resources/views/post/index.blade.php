@@ -37,7 +37,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <a href="{{route('posts.edit', ['post' => $post->id])}}"
                                            class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
                                             <i class="uil-edit-alt mr-1"></i> Edit Post
                                         </a>
@@ -58,7 +58,11 @@
                                         <hr class="-mx-2 my-2 dark:border-gray-800">
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <form action="{{route('posts.destroy', ['post' => $post->id])}}" id="delete-post-{{$post->id}}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
+                                        <a href="#" id="delete-post-link" data-id="{{$post->id}}"
                                            class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
                                             <i class="uil-trash-alt mr-1"></i> Delete
                                         </a>

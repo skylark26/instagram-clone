@@ -1,13 +1,13 @@
 /* ----------------- Start Document ----------------- */
 (function($){
     "use strict";
-    
+
     $(document).ready(function(){
-        
+
         /*----------------------------------------------------*/
         /* Dashboard Scripts
         /*----------------------------------------------------*/
-    
+
         // Dashboard Nav Submenus
         $('.sidebar_inner ul li a').on('click', function(e){
             if($(this).closest("li").children("ul").length) {
@@ -21,9 +21,9 @@
             }
         });
 
-    
+
         /*--------------------------------------------------*/
-        /*  Tippy JS 
+        /*  Tippy JS
         /*--------------------------------------------------*/
         /* global tippy */
         tippy('[data-tippy-placement]', {
@@ -32,25 +32,31 @@
             arrowType: 'sharp',
             size: 'regular',
             duration: 200,
-    
+
             // 'shift-toward', 'fade', 'scale', 'perspective'
             animation: 'shift-away',
-    
+
             animateFill: true,
             theme: 'dark',
-    
-            // How far the tooltip is from its reference element in pixels 
+
+            // How far the tooltip is from its reference element in pixels
             distance: 10,
-    
+
         });
 
-    
+
     // ------------------ End Document ------------------ //
     });
-    
+
     })(this.jQuery);
 
 
-
-    
-    
+    function deletePost(postId) {
+        console.log = postId;
+        let form = document.getElementById('delete-post');
+        if (confirm('Are you sure want to delete?') == true) {
+            form.submit();
+        }
+    }
+    let deleteLink = document.getElementById('delete-post-link');
+    deleteLink.addEventListener('click', deletePost());

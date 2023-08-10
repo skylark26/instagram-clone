@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegistrationRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,13 +22,8 @@ class AuthController extends Controller
         return view('auth.registration');
     }
 
-    public function postLogin(Request $request)
+    public function postLogin(LoginRequest $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('posts')->withSuccess('You have Successfully logged in');
@@ -34,15 +31,8 @@ class AuthController extends Controller
         return redirect('login')->withSuccess('Oops! You have entered invalid credentials');
     }
 
-    public function postRegistration(Request $request)
+    public function postRegistration(RegistrationRequest $request)
     {
-        $request->validate([
-            'username' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-            'password_confirmation' => 'required|same:password'
-        ]);
-
         $data = $request->all();
         $check = $this->create($data);
 
