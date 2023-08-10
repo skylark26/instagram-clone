@@ -63,7 +63,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //TODO: make a policy
+        $this->authorize('update', $post);
         return view('post.edit', ['post' => $post]);
     }
 
@@ -72,6 +72,7 @@ class PostController extends Controller
      */
     public function update(UpdateRequest $request, Post $post)
     {
+        $this->authorize('update', $post);
         $post->update($request->validated());
     }
 
