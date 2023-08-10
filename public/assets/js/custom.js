@@ -51,12 +51,13 @@
     })(this.jQuery);
 
 
-    function deletePost(postId) {
-        console.log = postId;
-        let form = document.getElementById('delete-post');
-        if (confirm('Are you sure want to delete?') == true) {
-            form.submit();
-        }
-    }
-    let deleteLink = document.getElementById('delete-post-link');
-    deleteLink.addEventListener('click', deletePost());
+    // function deletePost(postId) {
+    //     console.log = postId;
+    //     let form = document.getElementById('delete-post');
+    //     if (confirm('Are you sure want to delete?') == true) {
+    //         form.submit();
+    //     }
+    // }
+    // let deleteLink = document.getElementById('delete-post-link');
+    // deleteLink.addEventListener('click', deletePost());
+

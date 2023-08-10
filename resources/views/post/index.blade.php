@@ -78,6 +78,7 @@
                             <img src="/storage/{{$post->image}}" alt="">
                         </a>
                     </div>
+                    <p>{{$post->caption}}</p>
 
 
                     <div class="py-3 px-4 space-y-3">
@@ -131,6 +132,7 @@
                         </div>
 
                         <div class="border-t pt-4 space-y-4 dark:border-gray-600">
+                            @foreach ($post->comments as $comment)
                             <div class="flex">
                                 <div class="w-10 h-10 rounded-full relative flex-shrink-0">
                                     <img src="assets/images/avatars/avatar-1.jpg" alt=""
@@ -138,7 +140,7 @@
                                 </div>
                                 <div
                                     class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 h-full relative lg:ml-5 ml-2 lg:mr-20  dark:bg-gray-800 dark:text-gray-100">
-                                    <p class="leading-6">In ut odio libero vulputate
+                                    <p class="leading-6">{{$comment->text}}
                                         <urna class="i uil-heart"></urna>
                                         <i
                                             class="uil-grin-tongue-wink"> </i></p>
@@ -146,31 +148,24 @@
                                         class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
                                 </div>
                             </div>
-                            <div class="flex">
-                                <div class="w-10 h-10 rounded-full relative flex-shrink-0">
-                                    <img src="assets/images/avatars/avatar-1.jpg" alt=""
-                                         class="absolute h-full rounded-full w-full">
-                                </div>
+                            @endforeach
+                        </div>
+
+                        @auth()
+                        <form action="{{route('comments.store')}}" method="post">
+                            @csrf
+                            <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
+                                <input type="text" name="text" placeholder="Add your Comment.."
+                                       class="bg-transparent max-h-10 shadow-none">
                                 <div
-                                    class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 h-full relative lg:ml-5 ml-2 lg:mr-20  dark:bg-gray-800 dark:text-gray-100">
-                                    <p class="leading-6">Nam liber tempor cum soluta nobis eleifend option <i
-                                            class="uil-grin-tongue-wink-alt"></i>
-                                    </p>
-                                    <div
-                                        class="absolute w-3 h-3 top-3 -left-1 bg-gray-100 transform rotate-45 dark:bg-gray-800"></div>
+                                    class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                    <a href="#"> <i class="uil-image"></i></a>
+                                    <a href="#"> <i class="uil-video"></i></a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative dark:bg-gray-800">
-                            <input type="text" placeholder="Add your Comment.."
-                                   class="bg-transparent max-h-10 shadow-none">
-                            <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
-                                <a href="#"> <i class="uil-image"></i></a>
-                                <a href="#"> <i class="uil-video"></i></a>
-                            </div>
-                        </div>
-
+                            <input type="hidden" name="post_id" value="{{$post->id}}">
+                        </form>
+                        @endauth
                     </div>
 
                 </div>

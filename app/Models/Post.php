@@ -12,4 +12,14 @@ class Post extends Model
     use SoftDeletes;
 
     public $fillable = ['caption', 'image', 'slug'];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function scopeIsAuthor()
+    {
+
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PostController;
 
@@ -24,3 +25,4 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 
 Route::resource('posts', PostController::class);
+Route::resource('comments', CommentController::class);
