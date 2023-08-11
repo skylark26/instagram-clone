@@ -24,7 +24,12 @@ class PostController extends Controller
      */
     public function index(): View
     {
-        $posts = Post::orderBy('id', 'DESC')->get();
+        $searchQuery = request()->get('search');
+        if ($searchQuery) {
+            $posts = Post::where('caption', 'ILIKE', '%' . $searchQuery . '%')->orderBy('id', 'DESC')->get();
+        } else {
+            $posts = Post::orderBy('id', 'DESC')->get();
+        }
         return view('post.index', [
             'posts' => $posts
         ]);
