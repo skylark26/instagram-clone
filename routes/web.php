@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PostController;
+use \App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::resource('posts', PostController::class);
 Route::resource('comments', CommentController::class);
+Route::resource('users', UserController::class);

@@ -26,9 +26,9 @@ class PostController extends Controller
     {
         $searchQuery = request()->get('search');
         if ($searchQuery) {
-            $posts = Post::where('caption', 'ILIKE', '%' . $searchQuery . '%')->orderBy('id', 'DESC')->get();
+            $posts = Post::where('caption', 'ILIKE', '%' . $searchQuery . '%')->with('user')->orderBy('id', 'DESC')->get();
         } else {
-            $posts = Post::orderBy('id', 'DESC')->get();
+            $posts = Post::orderBy('id', 'DESC')->with('user')->get();
         }
         return view('post.index', [
             'posts' => $posts

@@ -19,7 +19,7 @@
                                          class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                 </div>
                             </a>
-                            <span class="block capitalize font-semibold dark:text-gray-100"> Johnson smith </span>
+                            <span class="block capitalize font-semibold dark:text-gray-100"> {{$post->user->name}} </span>
                         </div>
                         <div>
                             <a href="#"> <i
@@ -44,12 +44,6 @@
                                         </a>
                                     </li>
                                     @endif
-                                    <li>
-                                        <a href="#"
-                                           class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
-                                            <i class="uil-comment-slash mr-1"></i> Disable comments
-                                        </a>
-                                    </li>
                                     <li>
                                         <a href="#"
                                            class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">

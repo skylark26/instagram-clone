@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegistrationRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -34,7 +33,8 @@ class AuthController extends Controller
     public function postRegistration(RegistrationRequest $request)
     {
         $data = $request->all();
-        $check = $this->create($data);
+        $user = $this->create($data);
+        Auth::login($user);
 
         return redirect('posts')->withSuccess('Great! You have Successfully loggedin');
     }
@@ -42,7 +42,7 @@ class AuthController extends Controller
     public function create(array $data): User
     {
         return User::create([
-            'username' => $data['username'],
+            'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password'])
         ]);

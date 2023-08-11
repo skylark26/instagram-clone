@@ -261,10 +261,10 @@
                         </a>
                         <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
                             <ul>
-                                <li><a href="#"> Account setting </a> </li>
                                 @guest()
                                     <li><a href="{{route('login')}}"> Login</a></li>
                                 @else
+                                    <li><a href="{{route('users.edit', ['user' => auth()->user()->id])}}"> Account setting </a> </li>
                                     <li><a href="#" onclick="logout();"> Log Out</a></li>
                                 @endguest
                             </ul>

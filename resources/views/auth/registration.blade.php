@@ -8,11 +8,11 @@
             <form action="{{ route('register.post') }}" method="post">
                 @csrf
                 <div class="flex lg:flex-row flex-col lg:space-x-2">
-                    <input type="text" name="username" placeholder="Username" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800"
+                    <input type="text" name="name" placeholder="Name" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800"
                            style="border: 1px solid #d3d5d8 !important;">
                 </div>
-                @if ($errors->has('username'))
-                    <span>{{ $errors->first('username') }}</span>
+                @if ($errors->has('name'))
+                    <span>{{ $errors->first('name') }}</span>
                 @endif
                 <input type="text" name="email" placeholder="Email" class="bg-gray-200 mb-2 shadow-none  dark:bg-gray-800"
                        style="border: 1px solid #d3d5d8 !important;">
