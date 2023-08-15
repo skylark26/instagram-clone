@@ -2,15 +2,16 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Database\Seeders\PostSeeder;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     */
+    use RefreshDatabase;
     public function test_example(): void
     {
-        $this->assertTrue(true);
+        $this->seed(PostSeeder::class);
+        $this->assertDatabaseCount('posts', 1);
     }
 }

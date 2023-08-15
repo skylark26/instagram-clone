@@ -5,7 +5,7 @@
             <img src="{{asset('assets/images/avatars/avatar-2.jpg')}}"
                  class="bg-gray-200 border-4 border-white rounded-full w-full h-full">
         </div>
-        <a href="profile.html" class="text-xl font-medium capitalize mt-4 uk-link-reset"> {{auth()->user()->name}}
+        <a href="{{route('users.show', ['user' => auth()->user()->id])}}" class="text-xl font-medium capitalize mt-4 uk-link-reset"> {{auth()->user()->name}}
         </a>
         <div class="flex justify-around w-full items-center text-center uk-link-reset text-gray-800 mt-6">
             <div>
